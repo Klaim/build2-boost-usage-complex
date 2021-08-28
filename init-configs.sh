@@ -24,12 +24,15 @@ bpkg pkg-fetch -d ./build-common libboost-accumulators/1.76.0-a.0.20210827091956
 bpkg pkg-fetch -d ./build-common libboost-array/1.76.0-a.0.20210827091956.347bf77574ce
 
 
-bdep init @release @debug
+bdep init @debug @release
+bdep test @debug @release
+b install: build-debug/aaa/
+b install: build-release/aaa/
 
 #####
 # NOTES:
 # 1. why do we get libicu?
 # 2. `bdep status @common` says nothing is initialized there, which is true. I have to `bdep status @debug -r` to see the dependency tree, but right now it's unreadable.
 # 3. For that kind of setup (where we want some dependencies to be built once for all and shared), having to specify the specific versions of these special dependencies is a bit problematic for maintenance.
-#    I don't know if there is a way to make bpkg work with the constraints of projects without projects being initialized?
+#    I don't know if there is a way to make bpkg work with the constraints of projects without projects being initialized? Or at least a way to fetch package with a constraint expression instead of a version?
 #
