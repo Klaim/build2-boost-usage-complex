@@ -1,0 +1,3 @@
+import libs = bbb%lib{bbb}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

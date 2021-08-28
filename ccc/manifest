@@ -1,0 +1,17 @@
+: 1
+name: ccc
+version: 0.1.0-a.0.z
+project: complex-project
+summary: ccc C++ library
+license: other: proprietary ; Not free/open source.
+description-file: README.md
+url: https://example.org/complex-project
+email: joel@jellynote.com
+#build-error-email: joel@jellynote.com
+depends: * build2 >= 0.13.0
+depends: * bpkg >= 0.13.0
+
+depends: libboost-array >= 1.76.0-
+depends: libboost-graph >= 1.76.0-
+depends: libboost-accumulators >= 1.76.0-
+

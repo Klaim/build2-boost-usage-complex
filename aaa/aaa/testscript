@@ -1,0 +1,13 @@
+: basics
+:
+$* 'World' >>~/EOO/ == 0
+Hello, World!
+
+/\[(\"\w+\"+,*\s*)*\]/
+EOO
+
+: missing-name
+:
+$* 2>>EOE != 0
+error: missing name
+EOE

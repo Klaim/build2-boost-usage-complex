@@ -1,0 +1,6 @@
+$out_root/
+{
+  include bbb/
+}
+
+export $out_root/bbb/$import.target

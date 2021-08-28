@@ -1,0 +1,15 @@
+: 1
+name: bbb
+version: 0.1.0-a.0.z
+project: complex-project
+summary: bbb C++ library
+license: other: proprietary ; Not free/open source.
+description-file: README.md
+url: https://example.org/complex-project
+email: joel@jellynote.com
+#build-error-email: joel@jellynote.com
+depends: * build2 >= 0.13.0
+depends: * bpkg >= 0.13.0
+
+depends: ccc
+depends: libboost-container >= 1.76.0-
