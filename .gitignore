@@ -6,3 +6,4 @@
 
 # Build configurations
 /build-*
+/install
