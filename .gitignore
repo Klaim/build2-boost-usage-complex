@@ -3,3 +3,6 @@
 # Local default options files.
 #
 .build2/local/
+
+# Build configurations
+/build-*
