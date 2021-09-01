@@ -12,4 +12,4 @@ depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 
 depends: ccc
-depends: libboost-container >= 1.76.0-
+depends: libboost-container >= 1.76.0
