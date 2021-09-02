@@ -18,10 +18,10 @@ bdep config link @release @common
 
 bpkg add -d ./build-common https://queue.stage.build2.org/1
 bpkg fetch -d ./build-common --trust EC:50:13:E2:3D:F7:92:B4:50:0B:BF:2A:1F:7D:31:04:C6:57:6F:BC:BE:04:2E:E0:58:14:FA:66:66:21:1F:14
-bpkg pkg-fetch -d ./build-common libboost-graph/1.76.0-a.0.20210827091956.347bf77574ce
-bpkg pkg-fetch -d ./build-common libboost-container/1.76.0-a.0.20210827091956.347bf77574ce
-bpkg pkg-fetch -d ./build-common libboost-accumulators/1.76.0-a.0.20210827091956.347bf77574ce
-bpkg pkg-fetch -d ./build-common libboost-array/1.76.0-a.0.20210827091956.347bf77574ce
+bpkg pkg-fetch -d ./build-common libboost-graph/1.76.0
+bpkg pkg-fetch -d ./build-common libboost-container/1.76.0
+bpkg pkg-fetch -d ./build-common libboost-accumulators/1.76.0
+bpkg pkg-fetch -d ./build-common libboost-array/1.76.0
 
 
 bdep init @debug @release
