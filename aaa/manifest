@@ -13,6 +13,6 @@ depends: * build2 >= 0.13.0
 depends: * bpkg >= 0.13.0
 
 depends: bbb
-depends: fmt ^8.0.0
+depends: fmt < 8.0.0
 
 
