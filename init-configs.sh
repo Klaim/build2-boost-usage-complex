@@ -3,25 +3,17 @@ rm -rf build-*/ .bdep/ install/
 
 common_flags=-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
 
-bpkg create -d ./build-common   cc config.cxx=clang++ config.c=clang
-bpkg create -d ./build-debug    cc config.cxx=clang++ config.c=clang "config.cc.coptions=-g -Og $common_flags" config.install.root=./install/debug
-bpkg create -d ./build-release  cc config.cxx=clang++ config.c=clang "config.cc.coptions=-O2 $common_flags" config.install.root=./install/release
-
 bdep init --empty
 
-bdep config add ./build-debug @debug --default --forward
-bdep config add ./build-release @release
-bdep config add ./build-common @common
+bdep config create ./build-common   @common  cc config.cxx=clang++ config.c=clang --no-default
+bdep config create ./build-debug    @debug   cc config.cxx=clang++ config.c=clang "config.cc.coptions=-g -Og $common_flags" config.install.root=./install/debug --default
+bdep config create ./build-release  @release cc config.cxx=clang++ config.c=clang "config.cc.coptions=-O2 $common_flags" config.install.root=./install/release
 
 bdep config link @debug @common
 bdep config link @release @common
 
-bpkg add -d ./build-common https://queue.stage.build2.org/1
-bpkg add -d ./build-common https://pkg.cppget.org/1/stable
-bpkg fetch -d ./build-common --trust EC:50:13:E2:3D:F7:92:B4:50:0B:BF:2A:1F:7D:31:04:C6:57:6F:BC:BE:04:2E:E0:58:14:FA:66:66:21:1F:14 --trust 70:64:FE:E4:E0:F3:60:F1:B4:51:E1:FA:12:5C:E0:B3:DB:DF:96:33:39:B9:2E:E5:C2:68:63:4C:A6:47:39:43
-bpkg build -d ./build-common --configure-only --yes libboost-graph libboost-container libboost-accumulators libboost-array fmt
-
-bdep init @debug @release
+bdep init @debug { @common }+ ?libboost-graph { @common }+ ?libboost-container { @common }+ ?libboost-accumulators { @common }+ ?libboost-array { @common }+ ?fmt
+bdep init @release
 bdep test @debug @release
 b install: build-debug/aaa/
 b install: build-release/aaa/
