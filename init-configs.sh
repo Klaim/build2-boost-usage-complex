@@ -1,4 +1,4 @@
-bdep deinit -a && bdep config remove -a
+# bdep deinit -a && bdep config remove -a
 rm -rf build-*/ .bdep/ install/
 
 common_flags=-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
@@ -12,7 +12,7 @@ bdep config create ./build-release  @release cc config.cxx=clang++ config.c=clan
 bdep config link @debug @common
 bdep config link @release @common
 
-bdep init @debug { @common }+ ?libboost-graph { @common }+ ?libboost-container { @common }+ ?libboost-accumulators { @common }+ ?libboost-array { @common }+ ?fmt
+bdep init @debug { @common }+ { ?libboost-graph ?libboost-container ?libboost-accumulators ?libboost-array ?fmt }
 bdep init @release
 bdep test @debug @release
 b install: build-debug/aaa/
