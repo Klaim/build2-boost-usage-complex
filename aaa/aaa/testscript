@@ -3,7 +3,7 @@
 $* 'World' >>~/EOO/ == 0
 Hello, World!
 
-/\[(\"\w+\"+,*\s*)*\]/
+/\{(\"\w+\"+,*\s*)*\}/
 EOO
 
 : missing-name
