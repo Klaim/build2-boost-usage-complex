@@ -1,7 +1,7 @@
 # bdep deinit -a && bdep config remove -a
 rm -rf build-*/ .bdep/ install/
 
-common_flags=-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
+common_flags="-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic"
 
 bdep init --empty
 
