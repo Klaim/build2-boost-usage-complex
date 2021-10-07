@@ -1,4 +1,4 @@
-cxx.std = 20
+cxx.std = experimental
 
 using cxx
 
