@@ -14,6 +14,7 @@ bdep config link @release @common
 
 bdep init @debug { @common }+ { ?libboost-graph ?libboost-container ?libboost-accumulators ?libboost-array ?fmt }
 bdep init @release
+bdep update @debug @release
 bdep test @debug @release
 b install: build-debug/aaa/     !config.install.root=./install/debug
 b install: build-release/aaa/   !config.install.root=./install/release
